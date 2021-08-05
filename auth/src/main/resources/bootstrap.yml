@@ -1,2 +1,20 @@
 server:
   port: 8001
+
+# 设置配置中心的拉取
+spring:
+  application:
+    name: CLOUD-AUTH
+  cloud:
+    config:
+      label: main
+      name: application #前缀
+      profile: test #后缀
+      uri: http://localhost:7999 #config服务器
+
+#暴露服务端口 https://docs.spring.io/spring-boot/docs/2.2.13.RELEASE/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

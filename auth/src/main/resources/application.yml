@@ -1,9 +1,3 @@
-server:
-  port: 8001
-spring:
-  application:
-    name: CLOUD-AUTH
-
 #设置注册中心
 eureka:
   client:
