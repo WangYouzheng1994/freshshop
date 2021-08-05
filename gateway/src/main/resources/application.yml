@@ -1,0 +1,50 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: freshshop-gateway
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+# 网关路由
+  cloud:
+    gateway:
+#      loadbalancer:
+#        use404: true
+      discovery:
+        locator:
+          enabled: true # 开启注册中心的动态路由，根据服务名称（如ribbon负载均衡）去寻找服务地址
+      routes:
+        - id: FRESH-ADMIN
+          uri: lb://fresh-admin/
+          predicates:
+            # 匹配规则如果匹配到就请求到uri的地址
+            - Path=/fresh-admin/**
+#          filters:
+#            - StripPrefix=1
+        #配置路由到百度。
+        - id: routeBaidu
+          uri: http://news.baidu.com/guonei
+          predicates:
+            - Path=/ymlRouteBaidu
+          filters:
+            - StripPrefix=1 # 1:不带着匹配的前缀ymlRouteBaidu，如果写2 那么就是剥离两层；0 带着前缀ymlRouteBaidu
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #注册中心单机模式
+      defaultZone: http://localhost:7001/eureka
+      #注册中心集群模式
+      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+  instance:
+    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
+    instance-id: freshgateway001
+    # 显示真实节点的ip用于线上定位调试
+    prefer-ip-address: true
+logging:
+  level:
+    root: debug

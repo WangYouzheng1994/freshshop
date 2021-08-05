@@ -1,0 +1,13 @@
+# 此配置文件是通用的不会区分生产还是开发
+server:
+  port: 8080
+  servlet:
+    context-path: /fresh-admin
+spring:
+  application:
+    name: fresh-admin
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.80.129:3306/freshshop?userUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root-password

@@ -1,0 +1,10 @@
+#此配置文件先于application.yml，是服务加载的第一个配置文件，视为配置的入口
+spring:
+  profiles:
+    active: dev
+  application:
+    name: fresh-admin
+
+#    springboot自动加载，先屏蔽掉nacos
+  autoconfigure:
+    exclude: com.alibaba.cloud.nacos.registry.NacosServiceRegistryAutoConfiguration

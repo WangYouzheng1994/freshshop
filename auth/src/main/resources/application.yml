@@ -1,0 +1,21 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: CLOUD-AUTH
+
+#设置注册中心
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #注册中心单机模式
+      defaultZone: http://localhost:7001/eureka
+      #注册中心集群模式
+      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+  instance:
+    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
+    instance-id:  cloud-auth
+    # 显示真实节点的ip用于线上定位调试
+    prefer-ip-address: true
