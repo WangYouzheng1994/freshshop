@@ -6,11 +6,28 @@ spring:
   application:
     name: CLOUD-AUTH
   cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: wyz
+                password: 123123
     config:
-      label: main
+      label: master
       name: application #前缀
       profile: test #后缀
       uri: http://localhost:7999 #config服务器
+  #配置mq，给bus用。
+  rabbitmq:
+    host: 192.168.80.129
+    port: 5672
+    username: wyz
+    password: 123123
 
 #暴露服务端口 https://docs.spring.io/spring-boot/docs/2.2.13.RELEASE/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints
 management:
