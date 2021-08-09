@@ -24,3 +24,27 @@ feign:
 logging:
   level:
     com.wyz.freshshop.admin.rpcclient.UserAuthClient: info
+spring:
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 192.168.80.129
+                port: 5672
+                username: wyz
+                password: 123123
+      bindings:
+        input:
+          destination: testExchange
+          content-type: application/json
+          binder: defaultRabbit
+          group: admin001 # 解决重复消费问题 新增消费组
+  rabbitmq:
+    host: 192.168.80.129
+    port: 5672
+    username: wyz
+    password: 123123

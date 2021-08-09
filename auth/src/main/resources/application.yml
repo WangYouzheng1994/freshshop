@@ -13,3 +13,7 @@ eureka:
     instance-id:  cloud-auth
     # 显示真实节点的ip用于线上定位调试
     prefer-ip-address: true
+    #设置心跳到注册中心间隔默认30，改成2秒
+    lease-renewal-interval-in-seconds: 2
+    # 告诉注册中心Eureka多久没有心跳后，就把我移除。 默认90S 改成10S
+    lease-expiration-duration-in-seconds: 10

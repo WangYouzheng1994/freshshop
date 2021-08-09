@@ -4,7 +4,6 @@ spring:
     active: dev
   application:
     name: fresh-admin
-
-#    springboot自动加载，先屏蔽掉nacos
+  #    springboot自动加载，先屏蔽掉nacos
   autoconfigure:
     exclude: com.alibaba.cloud.nacos.registry.NacosServiceRegistryAutoConfiguration

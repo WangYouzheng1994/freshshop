@@ -26,6 +26,12 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!--stream rabbit-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+        </dependency>
+
         <!--消息总线rabbitMQ支持-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
