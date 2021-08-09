@@ -17,3 +17,10 @@ eureka:
     lease-renewal-interval-in-seconds: 2
     # 告诉注册中心Eureka多久没有心跳后，就把我移除。 默认90S 改成10S
     lease-expiration-duration-in-seconds: 10
+spring:
+  zipkin:
+    base-url: http://192.168.80.129:9411/ # 指定zipkin地址
+  sleuth:
+    sampler:
+      # 0 ~ 1 1表示全部采集
+      probability: 1

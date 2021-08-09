@@ -1,8 +1,9 @@
 server:
   port: 8001
-
 # 设置配置中心的拉取
 spring:
+  profiles:
+    active: dev
   application:
     name: CLOUD-AUTH
   cloud:
@@ -33,6 +34,7 @@ spring:
     port: 5672
     username: wyz
     password: 123123
+
 
 #暴露服务端口 https://docs.spring.io/spring-boot/docs/2.2.13.RELEASE/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints
 management:

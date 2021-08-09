@@ -48,3 +48,14 @@ spring:
     port: 5672
     username: wyz
     password: 123123
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.80.129:3306/freshshop?userUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root-password
+  zipkin:
+    base-url: http://192.168.80.129:9411/ # 指定zipkin地址
+  sleuth:
+    sampler:
+      # 0 ~ 1 1表示全部采集
+      probability: 1
