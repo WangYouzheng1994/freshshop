@@ -9,6 +9,9 @@ spring:
 #        server-addr: 127.0.0.1:8848
 # 网关路由
   cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.80.129:8848
     gateway:
 #      loadbalancer:
 #        use404: true
@@ -31,20 +34,22 @@ spring:
           filters:
             - StripPrefix=1 # 1:不带着匹配的前缀ymlRouteBaidu，如果写2 那么就是剥离两层；0 带着前缀ymlRouteBaidu
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      #注册中心单机模式
-      defaultZone: http://localhost:7001/eureka
-      #注册中心集群模式
-      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
-  instance:
-    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
-    instance-id: freshgateway001
-    # 显示真实节点的ip用于线上定位调试
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      #注册中心单机模式
+#      defaultZone: http://localhost:7001/eureka
+#      #注册中心集群模式
+#      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+#  instance:
+#    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
+#    instance-id: freshgateway001
+#    # 显示真实节点的ip用于线上定位调试
+#    prefer-ip-address: true
+
+# springboot  日志级别
 logging:
   level:
     root: debug

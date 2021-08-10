@@ -1,18 +1,20 @@
 #设置注册中心
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      #注册中心单机模式
-      defaultZone: http://localhost:7001/eureka
-      #注册中心集群模式
-      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
-  instance:
-    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
-    instance-id: freshadmin001
-    # 显示真实节点的ip用于线上定位调试
-    prefer-ip-address: true
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      #注册中心单机模式
+#      defaultZone: http://localhost:7001/eureka
+#      #注册中心集群模式
+#      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+#  instance:
+#    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
+#    instance-id: freshadmin001
+#    # 显示真实节点的ip用于线上定位调试
+#    prefer-ip-address: true
+
+# 切换到Nacos
 feign:
   client:
     config: #这里其实下面是设置了一个map  key: default  value 就是实例对象中的各种属性，要熟悉这个套路哈~
@@ -26,6 +28,9 @@ logging:
     com.wyz.freshshop.admin.rpcclient.UserAuthClient: info
 spring:
   cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.80.129:8848
     stream:
       binders:
         defaultRabbit:

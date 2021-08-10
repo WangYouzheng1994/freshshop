@@ -1,23 +1,27 @@
 #设置注册中心
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      #注册中心单机模式
-      defaultZone: http://localhost:7001/eureka
-      #注册中心集群模式
-      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
-  instance:
-    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
-    instance-id:  cloud-auth
-    # 显示真实节点的ip用于线上定位调试
-    prefer-ip-address: true
-    #设置心跳到注册中心间隔默认30，改成2秒
-    lease-renewal-interval-in-seconds: 2
-    # 告诉注册中心Eureka多久没有心跳后，就把我移除。 默认90S 改成10S
-    lease-expiration-duration-in-seconds: 10
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      #注册中心单机模式
+#      defaultZone: http://localhost:7001/eureka
+#      #注册中心集群模式
+#      #defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+#  instance:
+#    # 設置eureka databoard中 status的名字：规范名字，否则 默认的应该是 ip域名 + springApplicationAame + port
+#    instance-id:  cloud-auth
+#    # 显示真实节点的ip用于线上定位调试
+#    prefer-ip-address: true
+#    #设置心跳到注册中心间隔默认30，改成2秒
+#    lease-renewal-interval-in-seconds: 2
+#    # 告诉注册中心Eureka多久没有心跳后，就把我移除。 默认90S 改成10S
+#    lease-expiration-duration-in-seconds: 10
 spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.80.129:8848
   zipkin:
     base-url: http://192.168.80.129:9411/ # 指定zipkin地址
   sleuth:
