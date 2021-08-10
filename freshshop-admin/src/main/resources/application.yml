@@ -3,6 +3,9 @@ server:
   port: 8080
   servlet:
     context-path: /fresh-admin
+spring:
+  application:
+    name: fresh-admin
 # nacos暴露服务端口
 management:
   endpoints:

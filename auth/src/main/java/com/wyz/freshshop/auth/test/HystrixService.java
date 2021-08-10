@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * @author WangYouzheng
  * @version 1.0
  * @since: 2021/8/1 21:40
- * @Description:
+ * @Description: 测试熔断器
  */
 @Slf4j
 @Service

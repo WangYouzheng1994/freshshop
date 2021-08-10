@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author WangYouzheng
  * @version 1.0
  * @since: 2021/8/9 12:08
- * @Description:  测试生产者
+ * @Description:  测试RabbitMQ生产者
  */
 @RestController
 @RequestMapping("mq")
