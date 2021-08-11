@@ -1,0 +1,14 @@
+server:
+  port: 8999
+spring:
+  application:
+    name: nacos-config
+  cloud:
+      nacos:
+        # 服务注册
+        discovery:
+          server-addr: http://192.168.80.129:8848/
+        config:
+          # 配置中心
+          server-addr: 192.168.80.129:8848
+          file-extension: yaml
