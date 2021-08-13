@@ -13,7 +13,7 @@
     <artifactId>config</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>config</name>
-    <description>config center</description>
+    <description>config center  SpringCloud config</description>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
