@@ -11,6 +11,15 @@ spring:
       transport:
         dashboard: 192.168.80.129:8080
         port: 8719
+        ##持久化
+      datasource:
+        ds1:
+          nacos:
+            server-addr: http://192.168.80.129:1111/  # 连接nacos
+            dataId: cloudalibaba-sentinel-service # 指定dataID
+            groupId: DEFAULT_GROUP # 指定分组
+            data-type: json # 指定类型
+            rule-type: flow # 流控
 # springboot actuator
 management:
   endpoints:
